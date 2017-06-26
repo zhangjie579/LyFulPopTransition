@@ -10,7 +10,6 @@
 #import <objc/message.h>
 #import "LyAnimationObjc.h"
 
-#define ColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface UINavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @property(nonatomic,strong)UIImageView                 *screenshotImgView;//截图view
@@ -60,9 +59,6 @@
     self.view.layer.shadowOpacity = 0.6;
     
     //1.侧滑返回手势
-    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRec:)];
-    self.panGesture.delegate = self;
-    
     [self.view addGestureRecognizer:self.panGesture];
     //边缘侧滑
 //    _panGestureRec = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRec:)];
@@ -71,20 +67,12 @@
 //    [self.view addGestureRecognizer:_panGestureRec];
     
     //2.创建截图的ImageView
-    self.screenshotImgView = [[UIImageView alloc] init];
-    // app的frame是包括了状态栏高度的frame
-    self.screenshotImgView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     
     //3.创建截图上面的黑色半透明遮罩
-    self.coverView = [[UIView alloc] init];
-    self.coverView.frame = self.screenshotImgView.frame;
-    self.coverView.backgroundColor = [UIColor blackColor];
     
     //4.数组
-    self.screenshotImgs = [[NSMutableArray alloc] init];
     
     //5.动画
-    self.animationObjc = [[LyAnimationObjc alloc] init];
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -181,7 +169,6 @@
     
     //3.判断平移的大小
     //计算目前手指拖动位移占屏幕总的宽高的比例,当这个比例达到3/4时, 就让imageview完全显示，遮盖完全消失
-    
     if (offsetX < ScreenWidth) {
         
         //注意:截图view,它开始位置是-ScreenWidth，手势往右,那么它也慢慢往右移动offsetX
@@ -249,6 +236,28 @@
     }
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    //1.如果为最底部的vc,就不能侧滑
+    if (self.viewControllers.count <= 1) {
+        return NO;
+    }
+    
+    //2.如果禁止了侧滑
+    UIViewController *topVC = self.viewControllers.lastObject;
+    if (topVC.ly_fulPopGestureHidden) {
+        return NO;
+    }
+    
+    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
+    if (translation.x <= 0) {
+        return NO;
+    }
+    
+    return YES;
+    
+}
+
 #pragma mark - 重写父类方法
 - (void)ly_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
@@ -267,10 +276,10 @@
 - (UIViewController *)ly_popViewControllerAnimated:(BOOL)animated
 {
     NSInteger index = self.viewControllers.count;
-    NSString * className = nil;
-    if (index >= 2) {
-        className = NSStringFromClass([self.viewControllers[index -2] class]);
-    }
+//    NSString * className = nil;
+//    if (index >= 2) {
+//        className = NSStringFromClass([self.viewControllers[index -2] class]);
+//    }
     
     if (self.screenshotImgs.count >= index - 1) {
         [self.screenshotImgs removeLastObject];
@@ -309,7 +318,6 @@
 - (void)screenShot
 {
     //1.将要被截图的view,即是窗口根控制器(必须不含状态栏,默认ios7中控制器是包含了状态栏的)
-//    UIViewController *rootViewController = self.view.window.rootViewController;
     UIViewController *rootViewController = self.topViewController;
     
     //2.开启上下文
@@ -319,13 +327,11 @@
     CGRect rect = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     
     //4.判读是导航栏是否有上层的Tabbar  决定截图的对象
-//    if (self.tabBarController == rootViewController)
     if (self.ly_currentTabBarControl)
     {
         //如果为tabBarController,必须将view的背景色设为clearColor不然会挡住截图的view
         rootViewController.tabBarController.view.backgroundColor = [UIColor clearColor];
         [rootViewController.tabBarController.view drawViewHierarchyInRect:rect afterScreenUpdates:NO];
-//        [rootViewController.view drawViewHierarchyInRect:rect afterScreenUpdates:NO];
     }
     else
     {
@@ -345,7 +351,15 @@
 static char ly_panGesture;
 - (UIPanGestureRecognizer *)panGesture
 {
-    return objc_getAssociatedObject(self, &ly_panGesture);
+    UIPanGestureRecognizer *pan = objc_getAssociatedObject(self, &ly_panGesture);
+    if (pan == nil) {
+        pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRec:)];
+        pan.delegate = self;
+        pan.maximumNumberOfTouches = 1;
+        
+        objc_setAssociatedObject(self, &ly_panGesture, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return pan;
 }
 
 - (void)setPanGesture:(UIPanGestureRecognizer *)panGesture
@@ -358,7 +372,15 @@ static char ly_panGesture;
 static char ly_screenshotImgView;
 - (UIImageView *)screenshotImgView
 {
-    return objc_getAssociatedObject(self, &ly_screenshotImgView);
+    UIImageView *image = objc_getAssociatedObject(self, &ly_screenshotImgView);
+    if (!image) {
+        image = [[UIImageView alloc] init];
+        // app的frame是包括了状态栏高度的frame
+        image.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+        
+        objc_setAssociatedObject(self, &ly_screenshotImgView, image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return image;
 }
 
 - (void)setScreenshotImgView:(UIImageView *)screenshotImgView
@@ -371,7 +393,13 @@ static char ly_screenshotImgView;
 static char ly_screenshotImgs;
 - (NSMutableArray<UIImage *> *)screenshotImgs
 {
-    return objc_getAssociatedObject(self, &ly_screenshotImgs);
+    NSMutableArray<UIImage *> *array = objc_getAssociatedObject(self, &ly_screenshotImgs);
+    if (!array) {
+        array = [[NSMutableArray alloc] init];;
+        
+        objc_setAssociatedObject(self, &ly_screenshotImgs, array, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return array;
 }
 
 - (void)setScreenshotImgs:(NSMutableArray<UIImage *> *)screenshotImgs
@@ -384,7 +412,15 @@ static char ly_screenshotImgs;
 static char ly_coverView;
 - (UIView *)coverView
 {
-    return objc_getAssociatedObject(self, &ly_coverView);
+    UIView *coverView = objc_getAssociatedObject(self, &ly_coverView);
+    if (!coverView) {
+        coverView = [[UIView alloc] init];
+        coverView.frame = self.screenshotImgView.frame;
+        coverView.backgroundColor = [UIColor blackColor];
+        
+        objc_setAssociatedObject(self, &ly_coverView, coverView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return coverView;
 }
 
 - (void)setCoverView:(UIView *)coverView
@@ -397,7 +433,13 @@ static char ly_coverView;
 static char ly_animationObjc;
 - (LyAnimationObjc *)animationObjc
 {
-    return objc_getAssociatedObject(self, &ly_animationObjc);
+    LyAnimationObjc *anima = objc_getAssociatedObject(self, &ly_animationObjc);
+    if (!anima) {
+        anima = [[LyAnimationObjc alloc] init];
+        
+        objc_setAssociatedObject(self, &ly_animationObjc, anima, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return anima;
 }
 
 - (void)setAnimationObjc:(LyAnimationObjc *)animationObjc
@@ -410,8 +452,7 @@ static char ly_animationObjc;
 static char navCurrentTabBarControl;
 - (BOOL)ly_currentTabBarControl
 {
-    NSInteger i = [objc_getAssociatedObject(self, &navCurrentTabBarControl) integerValue];
-    return i == 0 ? NO : YES;
+    return [objc_getAssociatedObject(self, &navCurrentTabBarControl) boolValue];
 }
 
 - (void)setLy_currentTabBarControl:(BOOL)ly_currentTabBarControl
@@ -440,7 +481,7 @@ static char navCurrentTabBarControl;
 
 - (void)ly_viewWillAppear:(BOOL)animated
 {
-    self.navigationController.panGesture.enabled = !self.ly_fulPopGestureHidden;
+//    self.navigationController.panGesture.enabled = !self.ly_fulPopGestureHidden;
     self.navigationController.navigationBar.hidden = self.ly_navBarHidden;
     self.navigationController.ly_currentTabBarControl = self.ly_currentTabBarControl;
     
@@ -449,7 +490,7 @@ static char navCurrentTabBarControl;
 
 - (void)ly_viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.panGesture.enabled = self.ly_fulPopGestureHidden;
+//    self.navigationController.panGesture.enabled = self.ly_fulPopGestureHidden;
     self.navigationController.navigationBar.hidden = !self.ly_navBarHidden;
     self.navigationController.ly_currentTabBarControl = !self.ly_currentTabBarControl;
     
@@ -478,8 +519,7 @@ static char navCurrentTabBarControl;
 static char fulPopGestureHidden;
 - (BOOL)ly_fulPopGestureHidden
 {
-    NSInteger enable = [objc_getAssociatedObject(self, &fulPopGestureHidden) integerValue];
-    return enable == 0 ? NO : YES;
+    return [objc_getAssociatedObject(self, &fulPopGestureHidden) boolValue];
 }
 
 - (void)setLy_fulPopGestureHidden:(BOOL)ly_fulPopGestureHidden
@@ -490,8 +530,7 @@ static char fulPopGestureHidden;
 static char navBarHidden;
 - (BOOL)ly_navBarHidden
 {
-    NSInteger enable = [objc_getAssociatedObject(self, &navBarHidden) integerValue];
-    return enable == 0 ? NO : YES;
+    return [objc_getAssociatedObject(self, &navBarHidden) boolValue];
 }
 
 - (void)setLy_navBarHidden:(BOOL)ly_navBarHidden
@@ -502,8 +541,7 @@ static char navBarHidden;
 static char currentTabBarControl;
 - (BOOL)ly_currentTabBarControl
 {
-    NSInteger i = [objc_getAssociatedObject(self, &currentTabBarControl) integerValue];
-    return i == 0 ? NO : YES;
+    return [objc_getAssociatedObject(self, &currentTabBarControl) boolValue];
 }
 
 - (void)setLy_currentTabBarControl:(BOOL)ly_currentTabBarControl

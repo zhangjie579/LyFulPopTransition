@@ -22,6 +22,7 @@
 //    self.ly_fulPopGestureHidden = YES;
 //    self.ly_navBarHidden = YES;
     
+    self.title = @"two";
     self.view.backgroundColor = [UIColor blueColor];
     
     UIButton *btn = [[UIButton alloc] init];

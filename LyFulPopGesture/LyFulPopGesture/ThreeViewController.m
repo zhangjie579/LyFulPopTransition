@@ -23,7 +23,7 @@
     self.title = @"three";
     self.view.backgroundColor = [UIColor whiteColor];
 
-//    self.ly_fulPopGestureHidden = YES;
+    self.ly_fulPopGestureHidden = YES;
     
     self.navBar.barTintColor = [UIColor redColor];
 //    [self.view addSubview:self.navBar];

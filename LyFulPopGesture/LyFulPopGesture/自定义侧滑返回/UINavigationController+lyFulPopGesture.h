@@ -10,7 +10,7 @@
 
 @interface UINavigationController (lyFulPopGesture)
 
-@property(nonatomic,strong)UIPanGestureRecognizer *panGesture;
+//@property(nonatomic,strong)UIPanGestureRecognizer *panGesture;
 @property(nonatomic,assign)BOOL ly_currentTabBarControl;//当前是否为tabBarControl
 
 @end
@@ -21,7 +21,7 @@
 
 @property(nonatomic,assign)BOOL ly_fulPopGestureHidden;//全屏侧滑手势状态
 @property(nonatomic,assign)BOOL ly_navBarHidden;//是否隐藏导航栏
-@property(nonatomic,assign)BOOL ly_currentTabBarControl;//当前是否为tabBarControl
+@property(nonatomic,assign)BOOL ly_currentTabBarControl;//当前是否为tabBarControl,如果为tabBarControl不设置会出现显示问题
 
 @end
 
