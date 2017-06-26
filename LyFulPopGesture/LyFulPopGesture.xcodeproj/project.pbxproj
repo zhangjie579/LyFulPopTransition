@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FA309B81F00F1E000D474F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA309B71F00F1E000D474F0 /* main.m */; };
+		2FA309BB1F00F1E000D474F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA309BA1F00F1E000D474F0 /* AppDelegate.m */; };
+		2FA309C31F00F1E000D474F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA309C21F00F1E000D474F0 /* Assets.xcassets */; };
+		2FA309C61F00F1E000D474F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA309C41F00F1E000D474F0 /* LaunchScreen.storyboard */; };
+		2FA309D11F00F1E100D474F0 /* LyFulPopGestureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA309D01F00F1E100D474F0 /* LyFulPopGestureTests.m */; };
+		2FA309DC1F00F1E100D474F0 /* LyFulPopGestureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA309DB1F00F1E100D474F0 /* LyFulPopGestureUITests.m */; };
+		2FA309EA1F00F1F300D474F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA309E91F00F1F300D474F0 /* Main.storyboard */; };
+		2FA30A1E1F00F2EE00D474F0 /* LyAnimationObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A0B1F00F2EE00D474F0 /* LyAnimationObjc.m */; };
+		2FA30A1F1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A0D1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.m */; };
+		2FA30A201F00F2EE00D474F0 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A0F1F00F2EE00D474F0 /* FourViewController.m */; };
+		2FA30A211F00F2EE00D474F0 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A121F00F2EE00D474F0 /* ForgetViewController.m */; };
+		2FA30A221F00F2EE00D474F0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A141F00F2EE00D474F0 /* LoginViewController.m */; };
+		2FA30A231F00F2EE00D474F0 /* LyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A171F00F2EE00D474F0 /* LyTabBarController.m */; };
+		2FA30A241F00F2EE00D474F0 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A191F00F2EE00D474F0 /* TwoViewController.m */; };
+		2FA30A251F00F2EE00D474F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A1B1F00F2EE00D474F0 /* ViewController.m */; };
+		2FA30A261F00F2EE00D474F0 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA30A1D1F00F2EE00D474F0 /* ThreeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FA309CD1F00F1E100D474F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FA309AB1F00F1E000D474F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FA309B21F00F1E000D474F0;
+			remoteInfo = LyFulPopGesture;
+		};
+		2FA309D81F00F1E100D474F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FA309AB1F00F1E000D474F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FA309B21F00F1E000D474F0;
+			remoteInfo = LyFulPopGesture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FA309B31F00F1E000D474F0 /* LyFulPopGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyFulPopGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA309B71F00F1E000D474F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FA309B91F00F1E000D474F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2FA309BA1F00F1E000D474F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2FA309C21F00F1E000D474F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FA309C51F00F1E000D474F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FA309C71F00F1E000D474F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA309CC1F00F1E100D474F0 /* LyFulPopGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyFulPopGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA309D01F00F1E100D474F0 /* LyFulPopGestureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyFulPopGestureTests.m; sourceTree = "<group>"; };
+		2FA309D21F00F1E100D474F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA309D71F00F1E100D474F0 /* LyFulPopGestureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyFulPopGestureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA309DB1F00F1E100D474F0 /* LyFulPopGestureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyFulPopGestureUITests.m; sourceTree = "<group>"; };
+		2FA309DD1F00F1E100D474F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA309E91F00F1F300D474F0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2FA30A0A1F00F2EE00D474F0 /* LyAnimationObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyAnimationObjc.h; sourceTree = "<group>"; };
+		2FA30A0B1F00F2EE00D474F0 /* LyAnimationObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyAnimationObjc.m; sourceTree = "<group>"; };
+		2FA30A0C1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+lyFulPopGesture.h"; sourceTree = "<group>"; };
+		2FA30A0D1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+lyFulPopGesture.m"; sourceTree = "<group>"; };
+		2FA30A0E1F00F2EE00D474F0 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		2FA30A0F1F00F2EE00D474F0 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		2FA30A111F00F2EE00D474F0 /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
+		2FA30A121F00F2EE00D474F0 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
+		2FA30A131F00F2EE00D474F0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2FA30A141F00F2EE00D474F0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2FA30A161F00F2EE00D474F0 /* LyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyTabBarController.h; sourceTree = "<group>"; };
+		2FA30A171F00F2EE00D474F0 /* LyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyTabBarController.m; sourceTree = "<group>"; };
+		2FA30A181F00F2EE00D474F0 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		2FA30A191F00F2EE00D474F0 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		2FA30A1A1F00F2EE00D474F0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2FA30A1B1F00F2EE00D474F0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2FA30A1C1F00F2EE00D474F0 /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		2FA30A1D1F00F2EE00D474F0 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FA309B01F00F1E000D474F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309C91F00F1E100D474F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309D41F00F1E100D474F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FA309AA1F00F1E000D474F0 = {
+			isa = PBXGroup;
+			children = (
+				2FA309B51F00F1E000D474F0 /* LyFulPopGesture */,
+				2FA309CF1F00F1E100D474F0 /* LyFulPopGestureTests */,
+				2FA309DA1F00F1E100D474F0 /* LyFulPopGestureUITests */,
+				2FA309B41F00F1E000D474F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FA309B41F00F1E000D474F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FA309B31F00F1E000D474F0 /* LyFulPopGesture.app */,
+				2FA309CC1F00F1E100D474F0 /* LyFulPopGestureTests.xctest */,
+				2FA309D71F00F1E100D474F0 /* LyFulPopGestureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FA309B51F00F1E000D474F0 /* LyFulPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				2FA30A091F00F2EE00D474F0 /* 自定义侧滑返回 */,
+				2FA30A101F00F2EE00D474F0 /* login */,
+				2FA30A151F00F2EE00D474F0 /* tabbar */,
+				2FA30A1C1F00F2EE00D474F0 /* ThreeViewController.h */,
+				2FA30A1D1F00F2EE00D474F0 /* ThreeViewController.m */,
+				2FA30A0E1F00F2EE00D474F0 /* FourViewController.h */,
+				2FA30A0F1F00F2EE00D474F0 /* FourViewController.m */,
+				2FA309B91F00F1E000D474F0 /* AppDelegate.h */,
+				2FA309BA1F00F1E000D474F0 /* AppDelegate.m */,
+				2FA309E91F00F1F300D474F0 /* Main.storyboard */,
+				2FA309C21F00F1E000D474F0 /* Assets.xcassets */,
+				2FA309C41F00F1E000D474F0 /* LaunchScreen.storyboard */,
+				2FA309C71F00F1E000D474F0 /* Info.plist */,
+				2FA309B61F00F1E000D474F0 /* Supporting Files */,
+			);
+			path = LyFulPopGesture;
+			sourceTree = "<group>";
+		};
+		2FA309B61F00F1E000D474F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FA309B71F00F1E000D474F0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FA309CF1F00F1E100D474F0 /* LyFulPopGestureTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FA309D01F00F1E100D474F0 /* LyFulPopGestureTests.m */,
+				2FA309D21F00F1E100D474F0 /* Info.plist */,
+			);
+			path = LyFulPopGestureTests;
+			sourceTree = "<group>";
+		};
+		2FA309DA1F00F1E100D474F0 /* LyFulPopGestureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2FA309DB1F00F1E100D474F0 /* LyFulPopGestureUITests.m */,
+				2FA309DD1F00F1E100D474F0 /* Info.plist */,
+			);
+			path = LyFulPopGestureUITests;
+			sourceTree = "<group>";
+		};
+		2FA30A091F00F2EE00D474F0 /* 自定义侧滑返回 */ = {
+			isa = PBXGroup;
+			children = (
+				2FA30A0A1F00F2EE00D474F0 /* LyAnimationObjc.h */,
+				2FA30A0B1F00F2EE00D474F0 /* LyAnimationObjc.m */,
+				2FA30A0C1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.h */,
+				2FA30A0D1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.m */,
+			);
+			path = "自定义侧滑返回";
+			sourceTree = "<group>";
+		};
+		2FA30A101F00F2EE00D474F0 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				2FA30A111F00F2EE00D474F0 /* ForgetViewController.h */,
+				2FA30A121F00F2EE00D474F0 /* ForgetViewController.m */,
+				2FA30A131F00F2EE00D474F0 /* LoginViewController.h */,
+				2FA30A141F00F2EE00D474F0 /* LoginViewController.m */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		2FA30A151F00F2EE00D474F0 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2FA30A161F00F2EE00D474F0 /* LyTabBarController.h */,
+				2FA30A171F00F2EE00D474F0 /* LyTabBarController.m */,
+				2FA30A181F00F2EE00D474F0 /* TwoViewController.h */,
+				2FA30A191F00F2EE00D474F0 /* TwoViewController.m */,
+				2FA30A1A1F00F2EE00D474F0 /* ViewController.h */,
+				2FA30A1B1F00F2EE00D474F0 /* ViewController.m */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FA309B21F00F1E000D474F0 /* LyFulPopGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA309E01F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGesture" */;
+			buildPhases = (
+				2FA309AF1F00F1E000D474F0 /* Sources */,
+				2FA309B01F00F1E000D474F0 /* Frameworks */,
+				2FA309B11F00F1E000D474F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LyFulPopGesture;
+			productName = LyFulPopGesture;
+			productReference = 2FA309B31F00F1E000D474F0 /* LyFulPopGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FA309CB1F00F1E100D474F0 /* LyFulPopGestureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA309E31F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGestureTests" */;
+			buildPhases = (
+				2FA309C81F00F1E100D474F0 /* Sources */,
+				2FA309C91F00F1E100D474F0 /* Frameworks */,
+				2FA309CA1F00F1E100D474F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA309CE1F00F1E100D474F0 /* PBXTargetDependency */,
+			);
+			name = LyFulPopGestureTests;
+			productName = LyFulPopGestureTests;
+			productReference = 2FA309CC1F00F1E100D474F0 /* LyFulPopGestureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2FA309D61F00F1E100D474F0 /* LyFulPopGestureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA309E61F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGestureUITests" */;
+			buildPhases = (
+				2FA309D31F00F1E100D474F0 /* Sources */,
+				2FA309D41F00F1E100D474F0 /* Frameworks */,
+				2FA309D51F00F1E100D474F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA309D91F00F1E100D474F0 /* PBXTargetDependency */,
+			);
+			name = LyFulPopGestureUITests;
+			productName = LyFulPopGestureUITests;
+			productReference = 2FA309D71F00F1E100D474F0 /* LyFulPopGestureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FA309AB1F00F1E000D474F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "张杰";
+				TargetAttributes = {
+					2FA309B21F00F1E000D474F0 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+					2FA309CB1F00F1E100D474F0 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2FA309B21F00F1E000D474F0;
+					};
+					2FA309D61F00F1E100D474F0 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2FA309B21F00F1E000D474F0;
+					};
+				};
+			};
+			buildConfigurationList = 2FA309AE1F00F1E000D474F0 /* Build configuration list for PBXProject "LyFulPopGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FA309AA1F00F1E000D474F0;
+			productRefGroup = 2FA309B41F00F1E000D474F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FA309B21F00F1E000D474F0 /* LyFulPopGesture */,
+				2FA309CB1F00F1E100D474F0 /* LyFulPopGestureTests */,
+				2FA309D61F00F1E100D474F0 /* LyFulPopGestureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FA309B11F00F1E000D474F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA309EA1F00F1F300D474F0 /* Main.storyboard in Resources */,
+				2FA309C61F00F1E000D474F0 /* LaunchScreen.storyboard in Resources */,
+				2FA309C31F00F1E000D474F0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309CA1F00F1E100D474F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309D51F00F1E100D474F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FA309AF1F00F1E000D474F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA309BB1F00F1E000D474F0 /* AppDelegate.m in Sources */,
+				2FA30A211F00F2EE00D474F0 /* ForgetViewController.m in Sources */,
+				2FA30A261F00F2EE00D474F0 /* ThreeViewController.m in Sources */,
+				2FA30A1E1F00F2EE00D474F0 /* LyAnimationObjc.m in Sources */,
+				2FA30A201F00F2EE00D474F0 /* FourViewController.m in Sources */,
+				2FA30A251F00F2EE00D474F0 /* ViewController.m in Sources */,
+				2FA30A231F00F2EE00D474F0 /* LyTabBarController.m in Sources */,
+				2FA30A221F00F2EE00D474F0 /* LoginViewController.m in Sources */,
+				2FA30A241F00F2EE00D474F0 /* TwoViewController.m in Sources */,
+				2FA30A1F1F00F2EE00D474F0 /* UINavigationController+lyFulPopGesture.m in Sources */,
+				2FA309B81F00F1E000D474F0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309C81F00F1E100D474F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA309D11F00F1E100D474F0 /* LyFulPopGestureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA309D31F00F1E100D474F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA309DC1F00F1E100D474F0 /* LyFulPopGestureUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FA309CE1F00F1E100D474F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FA309B21F00F1E000D474F0 /* LyFulPopGesture */;
+			targetProxy = 2FA309CD1F00F1E100D474F0 /* PBXContainerItemProxy */;
+		};
+		2FA309D91F00F1E100D474F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FA309B21F00F1E000D474F0 /* LyFulPopGesture */;
+			targetProxy = 2FA309D81F00F1E100D474F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FA309C41F00F1E000D474F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FA309C51F00F1E000D474F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FA309DE1F00F1E100D474F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2FA309DF1F00F1E100D474F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FA309E11F00F1E100D474F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LyFulPopGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2FA309E21F00F1E100D474F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LyFulPopGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2FA309E41F00F1E100D474F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LyFulPopGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LyFulPopGesture.app/LyFulPopGesture";
+			};
+			name = Debug;
+		};
+		2FA309E51F00F1E100D474F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LyFulPopGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LyFulPopGesture.app/LyFulPopGesture";
+			};
+			name = Release;
+		};
+		2FA309E71F00F1E100D474F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LyFulPopGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LyFulPopGesture;
+			};
+			name = Debug;
+		};
+		2FA309E81F00F1E100D474F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LyFulPopGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjie.LyFulPopGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LyFulPopGesture;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FA309AE1F00F1E000D474F0 /* Build configuration list for PBXProject "LyFulPopGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA309DE1F00F1E100D474F0 /* Debug */,
+				2FA309DF1F00F1E100D474F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FA309E01F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA309E11F00F1E100D474F0 /* Debug */,
+				2FA309E21F00F1E100D474F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2FA309E31F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGestureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA309E41F00F1E100D474F0 /* Debug */,
+				2FA309E51F00F1E100D474F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2FA309E61F00F1E100D474F0 /* Build configuration list for PBXNativeTarget "LyFulPopGestureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA309E71F00F1E100D474F0 /* Debug */,
+				2FA309E81F00F1E100D474F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FA309AB1F00F1E000D474F0 /* Project object */;
+}
